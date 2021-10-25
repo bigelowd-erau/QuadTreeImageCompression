@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-using UnityEngine.Windows;
 using UnityEngine.UI;
 
 public class QuadTree
@@ -170,7 +170,7 @@ public class QuadTree
         GameObject.FindGameObjectWithTag("Image").GetComponent<RawImage>().texture = texture;
         //then Save To Disk as PNG
         byte[] bytes = texture.EncodeToJPG();
-        var dirPath = Application.dataPath + "/../SaveImages/";
+        var dirPath = Application.dataPath + "/SaveImages/";
         if (!Directory.Exists(dirPath))
         {
             Directory.CreateDirectory(dirPath);
